@@ -70,7 +70,8 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
             (input_ids, position_ids, attention_mask, past_key_values, inputs_embeds, labels) = self.prepare_inputs_labels_for_multimodal(
                 input_ids, position_ids, attention_mask, past_key_values, labels, images
             )
-
+        # print("images", images)
+        # print("input_ids", input_ids)
         return super().forward(
             input_ids=input_ids,
             attention_mask=attention_mask,
